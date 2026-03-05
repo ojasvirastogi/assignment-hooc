@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+   
+    --foreground: #09090b;
+  }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Scroll container */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* Each section */
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+
+  .font-inter {
+  font-family: var(--font-inter);
+}
+
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Add a subtle gradient background so the glass header has something to blur */
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    background-attachment: fixed;
+    min-height: 200vh; /* Just for testing the scroll effect */
+  }
+}
+
+@theme {
+  /* You can define custom animations for the glass effect here */
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  
+  --animate-blob: blob 7s infinite;
+}
+
+/* Custom utility for extra-smooth glass if Tailwind's default isn't enough */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* globals.css */
+.footer-grainy-red {
+  /* The exact base red from your image */
+  background-color: #be0000; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* The noise overlay */
+.footer-grainy-red::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18; /* Adjust for more or less grain */
+  pointer-events: none;
+  /* High-quality SVG noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.noise-img {
+    z-index: 1;
+    opacity: 0.64;
+    mix-blend-mode: hard-light;
+    object-fit: cover;
+    background-image: url(https://cdn.prod.website-files.com/6729ec9…/6900669…_Grain.avif);
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: 50% center;
+    inset: 0%;
+}
