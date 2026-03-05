@@ -3,7 +3,7 @@ import { motion, AnimatePresence,Variants } from "framer-motion";
 import { useState } from "react";
 import { faqs } from "@/lib/sectionData";
 
-
+// gfgggggggggggggggggggg
 
 export default function FaqSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
