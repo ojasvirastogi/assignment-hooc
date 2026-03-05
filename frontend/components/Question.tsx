@@ -3,8 +3,6 @@ import { motion, AnimatePresence,Variants } from "framer-motion";
 import { useState } from "react";
 import { faqs } from "@/lib/sectionData";
 
-// gfgggggggggggggggggggg
-
 export default function FaqSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -14,7 +12,7 @@ export default function FaqSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Har word ke beech delay
+        staggerChildren: 0.1, 
         delayChildren: 0.2,
       },
     },
