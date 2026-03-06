@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { projectCards as projects } from "@/lib/sectionData";
+import { colors } from "@/lib/colors";
 
 
 
@@ -19,23 +20,23 @@ export default function Projects() {
 
       // --- 1. Background Color Transition (White -> Black) ---
       gsap.to(sectionRef.current, {
-        backgroundColor: "#000000",
+        backgroundColor: colors.bgBlack,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 60%",
           end: "top 20%",
-          scrub: 1,
+          scrub: 4,
         },
       });
 
       // --- 2. Text Color Transition ---
       gsap.to([".reveal-line", ".desc-text"], {
-        color: "#ffffff",
+        color: colors.textWhite,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 60%",
           end: "top 20%",
-          scrub: 2,
+          scrub: 4,
         },
       });
 
@@ -64,7 +65,7 @@ export default function Projects() {
           end: "bottom bottom",
           pin: true,
           pinSpacing: false,
-          scrub: 1,
+          scrub: 4,
         });
 
         if (index !== cards.length - 1) {
@@ -76,7 +77,7 @@ export default function Projects() {
               trigger: cards[index + 1],
               start: "top 85%",
               end: "top 8%",
-              scrub: 0.5,
+              scrub: 2,
             },
           });
         }
@@ -94,7 +95,7 @@ export default function Projects() {
   <div className="overflow-hidden">
     <h2 className="reveal-line text-4xl md:text-5xl text-center tracking-tight mb-4 font-inter font-light">
       
-      <span className="font-playfair italic text-red-600 font-normal">
+      <span className="font-playfair italic font-normal" style={{ color: colors.primary }}>
         You&apos;ve
       </span>{" "}
       USED IT,
@@ -104,7 +105,7 @@ export default function Projects() {
   <div className="overflow-hidden">
     <h2 className="reveal-line text-4xl md:text-5xl text-center  tracking-tight font-inter font-light">
       
-      <span className="font-playfair italic text-red-600 font-normal">
+      <span className="font-playfair italic font-normal" style={{ color: colors.primary }}>
         You just
       </span>{" "}
       DON&apos;T KNOW IT
@@ -112,7 +113,7 @@ export default function Projects() {
   </div>
 
   <div className="flex flex-col md:flex-row items-end justify-between mt-12 border-t border-black/10 pt-8">
-    <p className="desc-text font-inter font-light text-gray-600 max-w-sm text-sm md:text-base leading-relaxed">
+    <p className="desc-text font-inter font-light max-w-sm text-sm md:text-base leading-relaxed" style={{ color: colors.textMuted }}>
      From just an idea, to a high-precision system
     We design, build, and scale intelligent systems that turn data into decisions, automation into advantage, and complexity into clarity.
  </p>
@@ -132,7 +133,7 @@ export default function Projects() {
             className={`project-card w-full max-w-7xl h-[80vh] ${project.color} flex flex-col overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.3)] mb-[5vh]`}
           >
             <div className="w-full p-8 md:p-12 flex justify-between items-start border-b border-black/5">
-              <div className="flex flex-col gap-2 text-black">
+              <div className="flex flex-col gap-2" style={{ color: colors.textBlack }}>
                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">
                    {project.title}
                  </h3>
@@ -140,7 +141,7 @@ export default function Projects() {
                    {project.description}
                  </p>
               </div>
-              <button className="text-black font-bold text-lg flex items-center gap-2 hover:translate-x-2 transition-transform">
+              <button className="font-bold text-lg flex items-center gap-2 hover:translate-x-2 transition-transform" style={{ color: colors.textBlack }}>
                 View Project <span>→</span>
               </button>
             </div>

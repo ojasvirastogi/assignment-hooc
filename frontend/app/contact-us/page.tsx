@@ -126,9 +126,13 @@ const ContactAndPresence = () => {
             {[
               { icon: <Phone size={20}/>, title: "Call Us Directly", sub: "Mon-Fri from 9am to 6pm IST", val: "+91 8799302123" },
               { icon: <Mail size={20}/>, title: "Email Support", sub: "For general inquiries and support", val: "info@HoocAisolution.com" },
-              { icon: <MessageSquare size={20}/>, title: "Live Chat", sub: "Instant response from our team", val: "Chat with Us" }
+              { icon: <MessageSquare size={20}/>, title: "Book Consultation", sub: "Instant response from our team", val: "Schedule Now", action: () => setIsModalOpen(true) }
             ].map((card, i) => (
-              <div key={i} className="bg-[#0d0d0d] border border-white/10 rounded-[1.5rem] p-8 hover:border-red-600/50 hover:shadow-[0_0_30px_rgba(255,0,0,0.1)] transition-all duration-500 group relative overflow-hidden">
+              <div 
+                key={i} 
+                onClick={card.action}
+                className={`bg-[#0d0d0d] border border-white/10 rounded-[1.5rem] p-8 hover:border-red-600/50 hover:shadow-[0_0_30px_rgba(255,0,0,0.1)] transition-all duration-500 group relative overflow-hidden ${card.action ? 'cursor-pointer' : ''}`}
+              >
                 <div className="w-12 h-12 rounded-full bg-red-600/10 flex items-center justify-center mb-6 mx-auto text-red-600 border border-red-600/20 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">{card.icon}</div>
                 <h3 className="text-lg font-bold mb-1">{card.title}</h3>
                 <p className="text-gray-500 text-[11px] mb-6">{card.sub}</p>

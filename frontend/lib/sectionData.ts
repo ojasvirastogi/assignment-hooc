@@ -1,8 +1,5 @@
 // ============================================================
-// sectionData.ts — Centralized data config for all sections
-// Import what you need in each component instead of defining
-// data inline.
-// ============================================================
+import { colors } from "./colors";
 
 // -----------------------------------------------------------
 // AwardsSection.tsx → awardCards
@@ -458,28 +455,28 @@ export const projectCards = [
   {
     title: "INDIai",
     description: "Translating the user experience of a reputed financial-service provider.",
-    color: "bg-[#D6B3FF]",
+    color: colors.projectLavender,
     tags: ["Web Design", "Responsive"],
     image: "/project1.png",
   },
   {
     title: "RUMBLE",
     description: "Social gaming platform for one of the largest gaming communities.",
-    color: "bg-[#4c3592]",
+    color: colors.projectPurple,
     tags: ["App Design", "UI UX"],
     image: "/project2.png",
   },
   {
     title: "PLAYVERSE",
     description: "Gaming ecosystem focused on the next digital era.",
-    color: "bg-[#2A2A2A]",
+    color: colors.projectDark,
     tags: ["Branding", "Web3"],
     image: "/project3.png",
   },
   {
     title: "PUBG",
     description: "Gaming ecosystem focused on the next digital era.",
-    color: "bg-[#2A2A2A]",
+    color: colors.projectDark,
     tags: ["Branding", "Web3"],
     image: "/project3.png",
   },
@@ -505,6 +502,7 @@ export const navLinks = [
       { name: "AI Development", href: "/services/ai-development" },
     ],
   },
+  { name: "Help", href: "https://www.hooc.ch/en-us/support", external: true },
 ];
 
 // -----------------------------------------------------------

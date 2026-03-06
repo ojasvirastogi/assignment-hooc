@@ -32,7 +32,7 @@ const AboutSection = () => {
     <motion.section 
       ref={sectionRef}
       style={{ backgroundColor }}
-      className="relative w-full min-h-screen text-white py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden flex flex-col justify-center transition-colors duration-100"
+      className="relative w-full min-h-screen text-white pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 md:px-12 overflow-hidden flex flex-col transition-colors duration-100"
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col">
         
@@ -74,7 +74,8 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900 rounded-sm shadow-xl"
+              className="relative aspect-[3/4] w-full overflow-hidden rounded-sm shadow-xl"
+              style={{ backgroundColor: colors.bgCard }}
             >
               <AnimatePresence mode="wait">
                 <motion.img 
@@ -102,7 +103,7 @@ const AboutSection = () => {
 Being exceptional isn&apos;t about where you start.
          </p>
               <div className="h-4 md:h-8" />
-              <p className="font-inter text-xl sm:text-2xl lg:text-3xl text-white/60 font-light">
+              <p className="font-inter text-xl sm:text-2xl lg:text-3xl font-light" style={{ color: colors.textSubtle }}>
                 It&apos;s about what you build.
               </p>
             </motion.div>
@@ -115,7 +116,8 @@ Being exceptional isn&apos;t about where you start.
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="relative aspect-square w-full overflow-hidden bg-zinc-900 rounded-sm shadow-2xl"
+              className="relative aspect-square w-full overflow-hidden rounded-sm shadow-2xl"
+              style={{ backgroundColor: colors.bgCard }}
             >
               <AnimatePresence mode="wait">
                 <motion.img 
@@ -135,15 +137,16 @@ Being exceptional isn&apos;t about where you start.
         {/* --- 3. Explore Button (Below the aligned line) --- */}
         <div className="flex justify-end mt-12">
   <Link href="/portfolios" className="contents"> {/* Use "contents" to avoid layout breakage */}
-    <motion.button 
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.8, duration: 0.8 }}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="group w-full md:w-[30%] lg:w-[25%] flex items-center justify-center gap-4 bg-white text-black py-4 px-6 md:px-8 rounded-full transition-all duration-300 shadow-lg active:opacity-90"
-    >
+      <motion.button 
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="group w-full md:w-[30%] lg:w-[25%] flex items-center justify-center gap-4 py-4 px-6 md:px-8 rounded-full transition-all duration-300 shadow-lg active:opacity-90"
+        style={{ backgroundColor: colors.textWhite, color: colors.textBlack }}
+      >
       <span className="text-sm sm:text-base font-bold tracking-widest uppercase">
         Explore Our Work
       </span>

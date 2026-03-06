@@ -106,7 +106,8 @@ export default function Footer() {
               onClick={() => router.push("/contact-us")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-4 border border-white/40 px-8 py-4 rounded-full text-lg font-light transition-all bg-white/5 hover:bg-white hover:text-black"
+              className="group flex items-center gap-4 border border-white/40 px-8 py-4 rounded-full text-lg font-light transition-all"
+              style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
             >
               Schedule a Call <span className="text-2xl group-hover:translate-x-1 transition-transform">→</span>
             </motion.button>
@@ -159,10 +160,11 @@ export default function Footer() {
           <motion.div 
             initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="fixed inset-0 z-[500] bg-[#020202] text-white overflow-y-auto font-inter"
+            className="fixed inset-0 z-[500] text-white overflow-y-auto font-inter"
+            style={{ backgroundColor: colors.bgDeep }}
           >
             <NoiseOverlay />
-            <div className="sticky top-0 z-20 bg-[#020202]/90 backdrop-blur-md border-b border-white/10 px-6 md:px-20 py-6 flex justify-between items-center">
+            <div className="sticky top-0 z-20 backdrop-blur-md border-b border-white/10 px-6 md:px-20 py-6 flex justify-between items-center" style={{ backgroundColor: `${colors.bgDeep}E6` }}>
               <h2 className="text-2xl font-light tracking-tighter uppercase">
                 {activeOverlay === "terms" ? "Terms & " : "Privacy "} 
                 <span style={{ color: colors.primaryGlow }}>{activeOverlay === "terms" ? "Conditions" : "Policy"}</span>
@@ -173,22 +175,22 @@ export default function Footer() {
             <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 space-y-12">
               {activeOverlay === "terms" ? (
                 <section className="space-y-4">
-                  <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 border-red-600 pl-4">1. Agreement</h3>
+                  <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 pl-4" style={{ borderColor: colors.primary }}>1. Agreement</h3>
                   <p className="text-white/70 leading-relaxed">By using our platform, you agree to these terms...</p>
                 </section>
               ) : (
                 <>
                   <section className="space-y-4">
-                    <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 border-red-600 pl-4">Data Protection</h3>
+                    <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 pl-4" style={{ borderColor: colors.primary }}>Data Protection</h3>
                     <p className="text-white/70 leading-relaxed">Your data security is our priority. We use industry-standard encryption to protect your project details.</p>
                   </section>
                   <section className="space-y-4">
-                    <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 border-red-600 pl-4">Information We Collect</h3>
+                    <h3 className="text-xl font-bold uppercase tracking-widest border-l-4 pl-4" style={{ borderColor: colors.primary }}>Information We Collect</h3>
                     <p className="text-white/70 leading-relaxed">We collect names and emails for scheduling consultations.</p>
                   </section>
                 </>
               )}
-              <button onClick={closeOverlay} className="bg-white text-black px-10 py-4 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-red-600 hover:text-white transition-all">Close</button>
+              <button onClick={closeOverlay} className="bg-white text-black px-10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-all">Close</button>
             </div>
           </motion.div>
         )}

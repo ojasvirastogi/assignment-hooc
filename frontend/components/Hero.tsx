@@ -36,9 +36,7 @@ export default function HeroSection() {
 
 
 
-// test add
 
-// trsfvgggggggggggggggggg
 
 
 
@@ -160,7 +158,7 @@ export default function HeroSection() {
 
       {/* Moved bottom-8 to bottom-20 for mobile to avoid cutoff */}
       <div className="absolute bottom-40 left-0 right-0 px-6 md:left-auto md:right-10 md:bottom-10 z-30 text-center md:text-right">
-        <p className="text-[10px] sm:text-xs md:text-[15px] text-gray-500 uppercase font-medium max-w-[500px] mx-auto md:mr-0 leading-relaxed">
+        <p className="text-[10px] sm:text-xs md:text-[15px] uppercase font-medium max-w-[500px] mx-auto md:mr-0 leading-relaxed" style={{ color: colors.textSubtle }}>
           Enterprise AI systems designed to scale operations, 
           <span className="hidden md:inline"><br /></span>
           {" "}sharpen decision-making, and deliver measurable outcomes.

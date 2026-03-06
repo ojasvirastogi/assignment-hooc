@@ -2,15 +2,21 @@
 
 import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const lenis = useLenis();
   
   useEffect(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
     // Ensure ScrollTrigger refreshes when Lenis scrolls
     ScrollTrigger.refresh();
-  }, []);
+  }, [pathname, lenis]);
 
   return (
     <ReactLenis 

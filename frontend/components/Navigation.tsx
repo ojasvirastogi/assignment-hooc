@@ -61,8 +61,11 @@ const Navigation = () => {
                   onMouseEnter={() => link.dropdown && setShowServices(true)}
                   onMouseLeave={() => link.dropdown && setShowServices(false)}
                 >
+
                   <Link
                     href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     onClick={(e) => {
                       if (link.dropdown) {
                         e.preventDefault();
@@ -177,6 +180,8 @@ const Navigation = () => {
                 <div key={link.name} className="flex flex-col gap-4">
                   <Link
                     href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     onClick={(e) => {
                       if (link.dropdown) {
                         e.preventDefault();

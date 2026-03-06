@@ -59,7 +59,7 @@ export default function IndustrySection() {
           {/* FIX: Added 'inline-block' and 'px-2' 
             Italic fonts need extra breathing room so they don't get clipped.
           */}
-          <span className="italic text-red-600 font-normal inline-block px-2">
+          <span className="italic font-normal inline-block px-2" style={{ color: colors.primary }}>
             Designed
           </span>{" "}
           WITH INDUSTRY <br />
@@ -78,10 +78,10 @@ export default function IndustrySection() {
                 style={{ color: textColor }}
                 className="flex justify-between items-center py-6 border-b border-gray-400/30 group cursor-pointer"
               >
-                <span className="text-lg tracking-widest font-medium transition-colors group-hover:text-red-600">
+                <span className="text-lg tracking-widest font-medium transition-colors group-hover:opacity-80">
                   {item}
                 </span>
-                <span className="text-2xl transition-transform group-hover:translate-x-2 group-hover:text-red-600">
+                <span className="text-2xl transition-transform group-hover:translate-x-2">
                   →
                 </span>
               </motion.div>
@@ -93,7 +93,8 @@ export default function IndustrySection() {
         <div className="mt-16 flex justify-end">
           <Link
             href="/industries"
-            className="text-red-600 flex items-center gap-2 text-xl hover:underline"
+            className="flex items-center gap-2 text-xl hover:underline"
+            style={{ color: colors.primary }}
           >
             View all Industries →
           </Link>

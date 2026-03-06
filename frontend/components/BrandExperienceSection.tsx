@@ -94,7 +94,8 @@ export default function BrandExperienceSection() {
   return (
     <section 
       ref={containerRef} 
-      className="bg-white py-16 md:py-32 overflow-hidden relative"
+      className="py-16 md:py-32 overflow-hidden relative"
+      style={{ backgroundColor: colors.textWhite }}
     >
       <div className="flex flex-col gap-4 mb-16 md:mb-32">
         <MarqueeRow images={row1} direction="left" duration={40} />
@@ -116,7 +117,8 @@ export default function BrandExperienceSection() {
               <span className=" inline-block mr-3">
                 <motion.span 
                   variants={wordVariants} 
-                  className="italic text-red-600 font-normal font-playfair inline"
+                  className="italic font-normal font-playfair inline"
+                  style={{ color: colors.primary }}
                 >
                   Designed
                 </motion.span>
@@ -140,10 +142,10 @@ export default function BrandExperienceSection() {
           {industries.map((item, index) => (
             <Link href="/portfolios" key={index} className="block group">
               <div className="dynamic-text border-line flex justify-between items-center py-6 border-b border-gray-400/30 cursor-pointer font-inter transition-colors">
-                <span className="text-lg tracking-widest font-medium group-hover:text-red-600 transition-colors uppercase">
+                <span className="text-lg tracking-widest font-medium transition-colors uppercase">
                   {item}
                 </span>
-                <span className="text-2xl transition-transform group-hover:translate-x-2 group-hover:text-red-600">
+                <span className="text-2xl transition-transform group-hover:translate-x-2">
                   →
                 </span>
               </div>
@@ -152,7 +154,7 @@ export default function BrandExperienceSection() {
         </div>
 
         <div className="mt-16 flex justify-end">
-          <Link href="/industries" className="text-red-600 flex items-center gap-2 text-xl hover:underline font-inter group">
+          <Link href="/industries" className="flex items-center gap-2 text-xl hover:underline font-inter group" style={{ color: colors.primary }}>
             View all Industries 
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>

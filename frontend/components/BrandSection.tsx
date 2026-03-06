@@ -57,8 +57,9 @@ function MobileCarousel() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === current ? "bg-red-500 w-4" : "bg-white/20"
+              i === current ? "w-4" : "bg-white/20"
             }`}
+            style={{ backgroundColor: i === current ? colors.primary : undefined }}
           />
         ))}
       </div>
@@ -157,7 +158,7 @@ export default function BrandSection() {
 
   // ── Desktop layout (original scroll animation) ─────────────────────────────
   return (
-    <section ref={targetRef} className="relative md:h-[200vh] bg-black">
+    <section ref={targetRef} className="relative md:h-[300vh] bg-black">
       <div className="sticky top-0 h-screen flex flex-col justify-center pt-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-10 mb-12 w-full">
           <motion.h2
